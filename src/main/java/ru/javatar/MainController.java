@@ -20,9 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class MainController extends HttpServlet {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
-    //    DataBase db = new DataBase("db_user","123654qq","false");
-    //    ArrayList<ArrayList<String>> result = db.dbQuery("SELECT * FROM pages;");
-    //    int i = 1;
+
     }
 
     @Override
