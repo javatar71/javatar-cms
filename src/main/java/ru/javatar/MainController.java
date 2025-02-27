@@ -2,8 +2,8 @@ package ru.javatar;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLDataException;
 import java.sql.SQLException;
+//import java.util.ArrayList;
 
 //import org.thymeleaf.context.Context;
 //import org.thymeleaf.web.IWebApplication;
@@ -15,25 +15,22 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+//import ru.javatar.Model.DataBase;
+
 public class MainController extends HttpServlet {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
-        DataBase db = new DataBase();
+    //    DataBase db = new DataBase("db_user","123654qq","false");
+    //    ArrayList<ArrayList<String>> result = db.dbQuery("SELECT * FROM pages;");
+    //    int i = 1;
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter pw = response.getWriter();
         String path = request.getPathInfo();
-        DataBase db = new DataBase();
-        try {
-            String answer = db.connect(path);
-            pw.println("title is " + answer);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            pw.println("<h1>not found</h1>");
-            e.printStackTrace();
-        } 
+        pw.println("<h1>" + path + "</h1>");
+
     }
 
     @Override
