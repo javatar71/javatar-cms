@@ -2,3 +2,4 @@
 /.mvn
 /target
 /.git
+/src/main/resources/ru/javatar/app.properties

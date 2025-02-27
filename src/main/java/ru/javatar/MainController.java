@@ -2,7 +2,7 @@ package ru.javatar;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
+//import java.sql.SQLException;
 //import java.util.ArrayList;
 
 //import org.thymeleaf.context.Context;
@@ -19,15 +19,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class MainController extends HttpServlet {
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException{
-
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter pw = response.getWriter();
-        String path = request.getPathInfo();
-        pw.println("<h1>" + path + "</h1>");
+        pw.println("<h1>Test Page</h1>");
 
     }
 
