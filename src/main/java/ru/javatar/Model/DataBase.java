@@ -7,9 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import ru.javatar.Props;
+
 public class DataBase{
-    static String db_url       =   "jdbc:postgresql://127.0.0.1:5432/db_test"; 
-    static String db_driver    =   "org.postgresql.Driver";
+    static String db_url       =   Props.get_prop("db.url"); 
+    static String db_driver    =   Props.get_prop("db.driver");
     String user;
     String password;
     String sslStatus;
