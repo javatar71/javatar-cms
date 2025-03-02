@@ -7,12 +7,46 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
   <display-name>Javatar CMS</display-name>
-   <servlet>
+  <servlet>
 	  <servlet-name>MainController</servlet-name>
     <servlet-class>ru.javatar.MainController</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>MainController</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>default</servlet-name>
+    <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+    <init-param>
+        <param-name>listings</param-name>
+        <param-value>true</param-value>
+    </init-param>
+    <init-param>
+        <param-name>debug</param-name>
+        <param-value>1</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>default</servlet-name>
+      <url-pattern>/styles/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>default</servlet-name>
+      <url-pattern>/images/*</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>default</servlet-name>
+      <url-pattern>/js/*</url-pattern>
+  </servlet-mapping>
+    <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Entire Application</web-resource-name>
+      <url-pattern>/*</url-pattern>
+      </web-resource-collection>
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
 </web-app>

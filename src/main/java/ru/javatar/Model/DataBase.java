@@ -37,7 +37,13 @@ public class DataBase{
         return DriverManager.getConnection(db_url, this.user, this.password);
     }
 
+    public String clearQuery(String str){
+        return str.replaceAll("[\"'<>]|--", "")
+        .trim();
+    }
+
     public ArrayList<ArrayList<String>> dbQuery(String query){
+        //query = clearQuery(query);
         ArrayList<ArrayList<String>> result_arr = new ArrayList<>();
         try{
             Connection conn = dbConnection();

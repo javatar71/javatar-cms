@@ -1,4 +1,4 @@
-package ru.javatar;
+package ru.javatar.Views;
 
 import java.io.IOException;
 import java.io.PrintWriter;
