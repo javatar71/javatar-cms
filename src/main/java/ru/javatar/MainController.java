@@ -35,6 +35,10 @@ public class MainController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter pw = response.getWriter();
         String url = request.getPathInfo();
+		if (url.endsWith(".css") || url.endsWith(".js") || url.endsWith(".txt")) {
+            getServletContext().getNamedDispatcher("default").forward(request, response);
+            return;
+        }
         DataBase db = new DataBase(
             Props.get_prop("db.user"), 
             Props.get_prop("db.password"), 
