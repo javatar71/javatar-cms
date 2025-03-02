@@ -38,9 +38,7 @@ public class DataBase{
     }
 
     public String clearQuery(String str){
-        return str.replaceAll("(?i)(--.*?$|/\\*.*?\\*/)", "")
-        .replaceAll("[^a-zA-Z0-9_.*(),=<>!?\\s]", "")
-        .replaceAll("\\s+", " ")
+        return str.replaceAll("[\"'<>]|--", "")
         .trim();
     }
 

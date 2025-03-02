@@ -24,11 +24,12 @@ import ru.javatar.Views.Template;
 public class MainController extends HttpServlet {
 
     public static void main(String[] args){
-        String url = "/";
+        String url = "/' OR 1=1--";
         DataBase db = new DataBase(
             Props.get_prop("db.user"), 
             Props.get_prop("db.password"), 
         "false");
+        url = db.clearQuery(url);
         ArrayList<ArrayList<String>> arr = db.dbQuery("select * from pages where alias = '"+url+"'");
         String result = arr.get(0).get(2);
         System.out.println(result);
