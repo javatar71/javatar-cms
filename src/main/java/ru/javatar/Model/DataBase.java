@@ -33,7 +33,6 @@ public class DataBase{
     }
 
     public Connection dbConnection() throws SQLException{
-        System.out.println("DB connection OK!");
         return DriverManager.getConnection(db_url, this.user, this.password);
     }
 
