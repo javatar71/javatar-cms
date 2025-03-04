@@ -24,6 +24,6 @@ public class Template{
         final TemplateEngine templateEngine = new TemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
         PrintWriter writer = response.getWriter();
-        templateEngine.process("template", context, writer);
+        templateEngine.process(templateFile, context, writer);
     }
 }
