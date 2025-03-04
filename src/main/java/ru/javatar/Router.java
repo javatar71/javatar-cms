@@ -32,7 +32,7 @@ public class Router {
         Props.get_prop("db.password"), 
         "false");
         url = db.clearQuery(url);
-        ArrayList<ArrayList<String>> arr_main = db.dbQuery("select * from pages where alias = '"+url+"';");
+        ArrayList<ArrayList<String>> arr_main = db.dbQuery("select * from pages where page_alias = '"+url+"';");
         return arr_main;
     }
 }
