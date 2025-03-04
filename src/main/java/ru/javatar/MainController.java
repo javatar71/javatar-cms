@@ -32,8 +32,7 @@ public class MainController extends HttpServlet {
         url = db.clearQuery(url);
         ArrayList<ArrayList<String>> arr = db.dbQuery("select * from pages where alias = '"+url+"'");
         String result = arr.get(0).get(2);
-        System.out.println(result);
-        
+        System.out.println(result);  
     }
 
     @Override
@@ -50,8 +49,6 @@ public class MainController extends HttpServlet {
         catch(SQLException e){
             System.out.println(e);
         }
-        
-
     }
 
     @Override
